@@ -38,7 +38,7 @@ h1 {
 
 /* ── Search Section ── */
 .search-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
@@ -84,6 +84,79 @@ h1 {
     transform: none;
 }
 
+/* ── NEW: Recent Searches Section ── */
+.recent-searches-section {
+    display: none;
+    margin: 0 0 20px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.recent-searches-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.recent-searches-title {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#recent-searches-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.recent-search-btn {
+    padding: 7px 16px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: #555;
+    transition: all 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.recent-search-btn:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+}
+
+.recent-search-btn:active {
+    transform: scale(0.95);
+}
+
+/* ── NEW: Clear History Button ── */
+.clear-history-btn {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #aaa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.2s;
+}
+
+.clear-history-btn:hover {
+    background: #fff0f0;
+    border-color: #f99;
+    color: #d32f2f;
+}
+
 /* ── Weather Display ── */
 #weather-display {
     margin-top: 10px;
@@ -109,6 +182,12 @@ h1 {
 .welcome-message p {
     font-size: 1rem;
     font-style: italic;
+}
+
+.welcome-hint {
+    margin-top: 8px;
+    font-size: 0.9rem !important;
+    color: #aaa !important;
 }
 
 /* ── Loading ── */
@@ -275,44 +354,18 @@ h1 {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    .container {
-        padding: 25px 18px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .forecast-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
+    .container { padding: 25px 18px; }
+    h1 { font-size: 2rem; }
+    .forecast-container { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 20px 12px;
-        align-items: flex-start;
-    }
-
-    .forecast-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .forecast-card {
-        padding: 12px 6px;
-    }
-
-    .forecast-temp {
-        font-size: 1.3rem;
-    }
-
-    .temperature {
-        font-size: 2.8rem;
-    }
-
-    .city-name {
-        font-size: 1.5rem;
-    }
+    body { padding: 20px 12px; align-items: flex-start; }
+    .forecast-container { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .forecast-card { padding: 12px 6px; }
+    .forecast-temp { font-size: 1.3rem; }
+    .temperature { font-size: 2.8rem; }
+    .city-name { font-size: 1.5rem; }
+    #recent-searches-container { gap: 6px; }
+    .recent-search-btn { font-size: 0.82rem; padding: 6px 12px; }
 }
